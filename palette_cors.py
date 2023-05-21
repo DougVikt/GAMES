@@ -1,6 +1,7 @@
 
-
-def cors(cor ,tint = 0):
+# paleta de cores simples , para usar coloca a cor e o ton 
+# não esta completa , pode adicionar muito mais cores e variações 
+def cors(cor = 'black' ,tint = 0):
 
         try :
                         
