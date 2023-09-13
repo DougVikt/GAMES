@@ -216,7 +216,7 @@ class Principal{
 
 
         for(int i=0 ;i < palavra.Length;++i){
-            if(palavra[i] == letraUser[0] && palavraCerta[i] == " _ "){
+            if(palavra[i] == letraUser[0] && palavraCerta[i] == "_"){
                 palavraCerta[i] = letraUser[0].ToString().ToLower();
                 break;
             }
