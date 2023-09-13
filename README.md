@@ -35,22 +35,23 @@
 
 # ADIVINHA A PALAVRA
   Jogo desenvolvido em c# , ainda e de prompt de comando , mas não deixa de ser um jogo bem legal . 
-  Permite o usuario colocar uma lista de palavras de 2 a 20 , onde uma sera escolhida aleatoriamente para ser adivinhada . 
+  Permite o usuario colocar uma lista de palavras de 2 a 20 , onde uma sera escolhida aleatoriamente para ser adivinhada , entretanto so pode colocar letras senão não passa pela verificação ;) . 
   O usuario tera o numero de letras da palavra mais 5 de tentativas para conseguir acertar .
   O jogo pode ser jogado varias vezes com a mesma lista , mas tambem pode ser alterada ao fim de uma partida .
+  
 
 # IMAGENS
   <div display="inline-block">
-    <img src="img/Game_Adv_Plv (6).png" width="230" height="200"/>
-    <img src="img/Game_Adv_Plv (7).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (10).png" width="230" height="200" />
-    <img src="img/Game_Adv_Plv (9).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (8).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (4).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (3).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (2).png" width="230" height="200" />
-   <img src="img/Game_Adv_Plv (1).png" width="230" height="200"/>
+    <img src="img/Adv_pv-1.png" width="230" height="200"/>
+    <img src="img/Adv_pv-2.png" width="230" height="200" />
+   <img src="img/Adv_pv-3.png" width="230" height="200" />
+    <img src="img/Adv_pv-4.png" width="230" height="200" />
+   <img src="img/Adv_pv-5.png" width="230" height="200" />
+   <img src="img/Adv_pv-6.png" width="230" height="200" />
+   <img src="img/Adv_pv-7.png" width="230" height="200" />
+   <img src="img/Adv_pv-8.png" width="230" height="200" />
 </div>
+<br><br>
 
 # PARTICIPANDO 
   Fique a vontade para participar , caso tenha ideias e quer melhora-los , entre em contato comigo no discord ou talvez esta desenvolvendo algum e quer ajuda so chamar :sunglasses:
