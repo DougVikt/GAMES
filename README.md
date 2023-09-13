@@ -32,6 +32,26 @@
     OBS : Caso queira testar , baixe a paleta de cores para não da erro ou coloque a cor manualmente 
     
 <br><br>
+
+# ADIVINHA A PALAVRA
+  Jogo desenvolvido em c# , ainda e de prompt de comando , mas não deixa de ser um jogo bem legal . 
+  Permite o usuario colocar uma lista de palavras de 2 a 20 , onde uma sera escolhida aleatoriamente para ser adivinhada . 
+  O usuario tera o numero de letras da palavra mais 5 de tentativas para conseguir acertar .
+  O jogo pode ser jogado varias vezes com a mesma lista , mas tambem pode ser alterada ao fim de uma partida .
+
+# IMAGENS
+  <div display="inline-block">
+    <img src="img/Game_Adv_Plv (6).png" width="230" height="200"/>
+    <img src="img/Game_Adv_Plv (7).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (10).png" width="230" height="200" />
+    <img src="img/Game_Adv_Plv (9).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (8).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (4).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (3).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (2).png" width="230" height="200" />
+   <img src="img/Game_Adv_Plv (1).png" width="230" height="200"/>
+</div>
+
 # PARTICIPANDO 
   Fique a vontade para participar , caso tenha ideias e quer melhora-los , entre em contato comigo no discord ou talvez esta desenvolvendo algum e quer ajuda so chamar :sunglasses:
   + DOUGVIKT#9526
