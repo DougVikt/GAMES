@@ -20,43 +20,50 @@ class Principal{
             Console.WriteLine("\tANTES DE COMEÇAR DIGITE AS PALAVRAS PARA SER USADA NO JOGO  ");
             Linhas(90);
 
-            recolocar:
+            recolocar:// reicinia caso o usuario queira refazer a lista
             
+            // variaveis
             List<char> letras = new List<char>();
             bool testando;
             string[] palavras = null;
             string palavra = null;
             int indice = 0;
 
+            // atribui a lista as palavras digitadas pelo usuario
             palavras = AdicionarPalavras();
             Console.Clear(); 
             Console.WriteLine("VERIFICANDO SUAS PALAVRAS ....");
             Linhas(90);
             Thread.Sleep(2000);
             Console.Clear();
-                
+
+            // chama a função de testar as letras 
             testando = TesteLetras(palavras);
 
+            // caso não passe pelo teste
             if (!testando){
                 Console.WriteLine("Algo deu errado ! Voce colocou palavra(s) incorretas \n\tTente novamente");
                 goto inicio;
             }
            
-            recomecar:
+            recomecar: // recomeça pos usuario escolher manter a lista digitada anteriormente 
 
+            // escolhe uma palavra aleatoriamente
             int aleatorio = new Random().Next(0 , palavras.Length);
             palavra = palavras[aleatorio];
-
+            // adiciona cada letra da palavra a lista letra 
             foreach(char lt in palavra){
                 letras.Add(lt);
             }
             indice = palavra.Length;
-            int tentativas = indice + 5;
+            int tentativas = indice + 5; // define o numero de tentativas para acerto
+            // função onde roda o jogo de adivinhar
             Jogando(letras , indice , palavra , tentativas);
-                            
+
+            // finalidades                 
             Console.WriteLine("Gostou ? Bora de novo ? S(sim)/N(não)");
             string resposta = Console.ReadLine();
-            if (resposta == "s" | resposta == "S"){
+            if (resposta == "s" | resposta == "S"){ 
                 Console.WriteLine("Quer refazer a lista de palavras ou fica com as que tenho aqui ? R (Refazer) / C (Continuar)");
                 string confirma = Console.ReadLine(); 
                 if(confirma == "R"| confirma == "r"){
@@ -72,7 +79,7 @@ class Principal{
         }
         
     }
-
+    // função de abertura , so para mostrar o cabeçalho do jogo
     static void Abertura(){
         string traso = "--";
         string espaco = "\t\t\t";
@@ -87,6 +94,8 @@ class Principal{
         
            
     }
+
+    // função que monta uma linha de acordo com o que e passado
     static void LinhaTraso(string espaco , string traso){
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write("{0}{1}",espaco, traso);
@@ -94,7 +103,7 @@ class Principal{
         Console.WriteLine();
     }
     
-
+    // função de adicionar as palavras na lista 
     static string[] AdicionarPalavras(){
         string[] palavras = null;
         bool passa ;
