@@ -7,7 +7,7 @@ using System.Collections.Generic;
 class Principal{
     static void Main(){ 
           
-        Abertura();
+        Abertura(); // função de abertura 
         //atrazo 
         Thread.Sleep(1800);
 
@@ -113,35 +113,35 @@ class Principal{
             Console.WriteLine("coloque quantas palavras vai colocar , sedo entre 2 e 20 :");
             string entrada = Console.ReadLine();
             
-            if(entrada.Length != 0 && entrada != "1"){ 
-                if(entrada.Length <= 2){  
-                    if(char.IsDigit(entrada[0]) && entrada.Length == 1 ){ 
+            if(entrada.Length != 0 && entrada != "1"){ // passa se o que foi digitado tem um caracter , não sendo 1
+                if(entrada.Length <= 2){  // passa se foi digitado tiver no maximo 2 numeros
+                    if(char.IsDigit(entrada[0]) && entrada.Length == 1 ){ // passa se a entrada for numerico com so 1 caracter
                         passa = true;
                     }
-                    else if (char.IsDigit(entrada[0]) && char.IsDigit(entrada[1])){ 
+                    else if (char.IsDigit(entrada[0]) && char.IsDigit(entrada[1])){ // passa se os dois caracteres forem numericos
                         passa = true;
                     }
-                    else{
+                    else{ // recusa caso não passem pelos casos acima 
                         passa = false; 
                         Console.WriteLine("Opa ! sem ser um numero não passa !");
                     }
-                    if(passa){ 
-                        int numero = Convert.ToInt32(entrada);
-                        if(numero <= 20){
+                    if(passa){ // passa se os dois primeiros casos forem verdadeiros 
+                        int numero = Convert.ToInt32(entrada); // converte a string para int
+                        if(numero <= 20){ // verifica se a entrada e menor ou igual a 20
                             Console.WriteLine("Digite as palavras separadas por linha :");
                             palavras = new string[numero];
-                            
+                            // pega as palavras na quandidade que foi escolhida 
                             for (int n = 0 ; n <= numero-1; n++){
                                 Console.Write("digite aqui :");
                                 palavras[n] = Console.ReadLine();           
                             } 
-                            return palavras;
+                            return palavras; // retorna a lista com as palavras
                         }
                         else{
                             Console.WriteLine("Eita ! ai não , so ate 20 ");
                         }
                         
-                    }                       
+                    }   // respostas para cada caso de falso                    
                 }
                 else{
                     Console.WriteLine("Calma ai , so dois digitos porfavor !");
@@ -157,7 +157,7 @@ class Principal{
         
 
     }    
-
+    // função do jogo 
     static void Jogando(List<char> letras , int indice , string palavra , int tentativas){
         List<string> palavraCerta = AdicionaEspaco(palavra);
         int acertos=0 , erros=0 ;
@@ -165,6 +165,7 @@ class Principal{
         char letraUserChar;
         string letrasAcertadas;
 
+        // cabeçalho da parte de adivinhar 
         Console.WriteLine("\t\t\tVAMOS COMEÇAR O JOGO !\n\tVOCE TEM 5 MAIS A QUANTIDADE DE LETRAS DA PALAVRA PARA ACERTA-LA\nDigite somente uma letra ");
         Linhas(90);
         Console.Write("ESCOLHI UMA BOA PALAVRA , A DICA E QUE ELA TEM ");
@@ -173,35 +174,35 @@ class Principal{
         Console.ResetColor();
         Console.WriteLine(" LETRAS");
         Console.WriteLine("Digite uma letra :"); 
-
+        // loop de adivinha
         do {
             letraUser = Console.ReadLine();
             
-            if(letraUser.Length == 1 && char.IsLetter(letraUser[0])){
-                letraUserChar = letraUser[0];
-                if(letras.Contains(letraUserChar)){
-                    letras.Remove(letraUserChar);
+            if(letraUser.Length == 1 && char.IsLetter(letraUser[0])){ // passa se a string digitada tiver um caracter e for uma letra 
+                letraUserChar = letraUser[0]; // repassa a string para char
+                if(letras.Contains(letraUserChar)){ // passa se a letra tem na lista letras
+                    letras.Remove(letraUserChar); // remove a letra da lista
                     ++acertos;
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green; // muda de cor o prompt
                     Console.Write("== Certo => ");
                     Console.ResetColor();
-                    palavraCerta = AmostraPalavra(palavraCerta ,letraUser , palavra);
-                    letrasAcertadas = string.Join(" " , palavraCerta);
-                    Console.WriteLine("{0}",letrasAcertadas);
+                    palavraCerta = AmostraPalavra(palavraCerta ,letraUser , palavra); // chama a função de amostrar a palavra so com a letra(s) acertda(s)
+                    letrasAcertadas = string.Join(" " , palavraCerta); // transforma a lista em um string 
+                    Console.WriteLine("{0}",letrasAcertadas); // amostra na tela
                 }
    
-                else{
+                else{ // caso seja falso o caso de cima 
                     ++erros;
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("== Erro {0} ==",erros);
+                    Console.WriteLine("== Erro {0} ==",erros); // mostra a quantidade de erros 
                     Console.ResetColor();
                     
                 }
-                if (acertos == indice ){
+                if (acertos == indice ){ // passa se os acertos for igual a quantidade de letras da palavra
                     Console.WriteLine("Muito bem ! a palavra e {0}",palavra.ToUpper());
                     break;
                 }
-                else if(erros > acertos & erros + acertos == tentativas){
+                else if(erros > acertos & erros + acertos == tentativas){ // passa se a quantidade de erros for maior aos de acertos e a soma deles de igual ao total de tentativas 
                     Console.WriteLine("Que pena, você errou mais de {0} \nA palavra era {1}",erros-1 , palavra);
                     break;
                 }
@@ -213,7 +214,7 @@ class Principal{
         }while(tentativas >= acertos);
     }
 
-    static List<string> AdicionaEspaco(string palavra){
+    static List<string> AdicionaEspaco(string palavra){ // função que adiciona os traços a lista de letras acetadas 
         List<string> palavraCerta = new List<string>();
         foreach(char letra in palavra){
             palavraCerta.Add("_");
@@ -222,7 +223,7 @@ class Principal{
     }
 
     static List<string> AmostraPalavra(List<string> palavraCerta, string letraUser , string palavra){
-
+        // pega a lista de palavras ja com traços e substitui cada letra acertada no lugar da letra deacordo com a palavra
 
         for(int i=0 ;i < palavra.Length;++i){
             if(palavra[i] == letraUser[0] && palavraCerta[i] == "_"){
@@ -234,7 +235,7 @@ class Principal{
         return palavraCerta;
     }
 
-    static void Linhas(int vezes){
+    static void Linhas(int vezes){ // função simples para adicionar linhas na tela
         string barra = "_";
         string linha = "";
         for(int i = 0;i < vezes;++i){
@@ -244,7 +245,7 @@ class Principal{
     }
 
 
-    static bool TesteLetras( string[] palavras){
+    static bool TesteLetras( string[] palavras){ // testa cada letra para que não passe nem um numero , se tiver retorna false 
        
         bool tem = true;
 
