@@ -35,7 +35,7 @@
 
 # ADIVINHA A PALAVRA
   Jogo desenvolvido em c# , ainda e de prompt de comando , mas não deixa de ser um jogo bem legal . 
-  Permite o usuario colocar uma lista de palavras de 2 a 20 , onde uma sera escolhida aleatoriamente para ser adivinhada , entretanto so pode colocar letras senão não passa pela verificação ;) . 
+  Permite o usuario colocar uma lista de palavras de 2 a 20 , onde uma sera escolhida aleatoriamente para ser adivinhada , entretanto so pode colocar letras , senão não passa pela verificação ;) . 
   O usuario tera o numero de letras da palavra mais 5 de tentativas para conseguir acertar .
   O jogo pode ser jogado varias vezes com a mesma lista , mas tambem pode ser alterada ao fim de uma partida .
   
